@@ -1,0 +1,43 @@
+<form  class="content-form" >
+<div class="card">
+    <div class="inner-box" id="card">
+      <div class="card-front">
+        <li class="Logo">
+        
+        </li>
+           
+      <div class="companyLogo">
+     
+      </div>
+        <!-- <h2>Registration</h2> -->
+
+        <form #form="ngForm" (ngSubmit)="register(form)">
+          <div class="row">   
+              <input type="text" class="input-box" [ngClass]="{'error' : form.controls['name']?.errors && isSubmitted }" required name="name" [(ngModel)]="registration.name"placeholder="Name..">
+          </div>
+          <div class="row">   
+            <input type="text" class="input-box" [ngClass]="{'error' : form.controls['position']?.errors && isSubmitted }" required name="position" [(ngModel)]="registration.position"placeholder="Position">
+        </div>
+        <div class="row">   
+          <input type="email" email class="input-box" [ngClass]="{'error' : form.controls['email']?.errors&& form.controls['email']?.touched && isSubmitted }" required name="email" [(ngModel)]="registration.email" placeholder="Enter Your Email">
+          <!-- <span *ngIf="form.controls['email']?.errors  && form.controls['email']?.touched && isSubmitted  " >try</span> -->
+          <!-- <span>{{form.controls['email']?.errors | json}}</span>  -->
+        </div>
+      <div class="row">   
+        <input type="text" class="input-box" [ngClass]="{'error' : form.controls['companyName']?.errors && isSubmitted }" required name="companyName"  [(ngModel)]="registration.companyName"placeholder="Entity/Organization">
+    </div>
+    <div class="row">   
+      <input type="text" class="input-box"  [ngClass]="{'error' : form.controls['phoneNumber']?.errors && isSubmitted }" required name="phoneNumber"  [(ngModel)]="registration.phoneNumber" placeholder="Phone Number">
+    </div>
+    <span>{{errorMessage}}</span>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      
+      </div>
+        <div class="card-back">
+        </div>
+    </div>
+
+  </div>
+</form>
