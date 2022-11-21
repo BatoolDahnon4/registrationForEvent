@@ -17,4 +17,5 @@ export interface Guest {
     email?: string;
     companyName?: string;
     phoneNumber?: string;
+    source?:string;
 }

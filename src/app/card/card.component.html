@@ -22,7 +22,7 @@
           <input type="email" email class="input-box" [ngClass]="{'error' : form.controls['email']?.errors&& form.controls['email']?.touched && isSubmitted }" required name="email" [(ngModel)]="registration.email" placeholder="Enter Your Email">
         </div>
       <div class="row">   
-        <input type="text" class="input-box" [ngClass]="{'error' : form.controls['companyName']?.errors && isSubmitted }" required name="companyName"  [(ngModel)]="registration.companyName"placeholder="Entity/Organization">
+        <input type="text" class="input-box" [ngClass]="{'error' : form.controls['companyName']?.errors && isSubmitted }" required name="companyName"  [(ngModel)]="registration.companyName"placeholder="Entity / Organization">
     </div>
     <div class="row">   
       <input type="text" class="input-box"  [ngClass]="{'error' : form.controls['phoneNumber']?.errors && isSubmitted }" required name="phoneNumber"  [(ngModel)]="registration.phoneNumber" placeholder="Phone Number">

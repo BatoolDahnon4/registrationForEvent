@@ -87,8 +87,8 @@ button{
     margin-top: 10px;
 }
 button:hover{
-    color: #fff;
-    background: rgb(10, 10, 10);
+    color: rgb(185, 115, 115);
+    background: rgba(49, 46, 46, 0.444);
 }
 .submit-btn{
     position: relative;
@@ -133,7 +133,7 @@ button:hover{
 
 span{
   padding-left: 12px;
-  color: #fafafa;
+  color: #bf6666;
   display: inline-block;
   font-size: 10px;
   line-height: 15px;
@@ -155,11 +155,11 @@ span{
     margin: 0px;
     width: 148px;
     height: 60px;
-    margin-left: 34px;
+    margin-left: -38px;
     display: grid;
     /* margin-top: -39px; */
-    margin-top: 12px;
-    margin-bottom: 19px;
+    margin-top: -45px;
+    margin-bottom: 83px;
 }
 .companyLogo{
     background-image: url(../../assets/images/companyLogo.png);
@@ -169,8 +169,8 @@ span{
     margin: 0px;
     width: 34px;
     height: 46px;
-    margin-left: 172px;
+    margin-left: 241px;
     display: grid;
-    margin-bottom: 25px;
-    margin-top: -76px;
+    margin-bottom: 52px;
+    margin-top: -141px;
 }

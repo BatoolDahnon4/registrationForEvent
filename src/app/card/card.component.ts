@@ -21,7 +21,7 @@ export interface DialogData {
 export class CardComponent implements OnInit {
  errorMessage:any;
  isHidden = false;
-registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:""}
+registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:"westBank"}
 dataSource: MatTableDataSource<Guest> = new MatTableDataSource<Guest>([]);
 email: string='';  
 isSubmitted = false;
