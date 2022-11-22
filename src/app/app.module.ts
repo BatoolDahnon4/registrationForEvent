@@ -10,6 +10,7 @@ import { Configuration } from './rest/typescript-angular-client-generated (1)';
 import { ApiModule } from './rest/typescript-angular-client-generated (1)/api.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -18,7 +19,6 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     AppComponent,
     CardComponent,
     MyDialogComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
   entryComponents:[MyDialogComponent],
   providers: [    {
     provide: Configuration, useFactory:()=>{
-      return new Configuration({basePath: 'https://localhost:7110'})
+      return new Configuration({basePath: environment.basePath})
     },
     multi : false
   }],
