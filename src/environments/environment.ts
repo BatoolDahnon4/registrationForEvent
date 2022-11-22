@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  firebase: "string"
+  firebase: "string",
+  basePath: 'https://localhost:7110'
 };
 
 /*
