@@ -2,40 +2,44 @@
 <div class="card">
     <div class="inner-box" id="card">
       <div class="card-front">
-        <li class="Logo">
+        <div class="icons">
+        <div class="Logo">
         
-        </li>
+      </div>
            
       <div class="companyLogo">
      
       </div>
+    </div>
         <!-- <h2>Registration</h2> -->
 
         <form #form="ngForm" (ngSubmit)="register(form)">
           <div class="row">   
-              <input type="text" class="input-box" [ngClass]="{'error' : form.controls['name']?.errors && isSubmitted }" required name="name" [(ngModel)]="registration.name"placeholder="Name..">
+              <input type="text" pattern="[ a-zA-Z]*" class="input-box" [ngClass]="{'error' : form.controls['name']?.errors && isSubmitted }" required name="name" [(ngModel)]="registration.name"placeholder="Name..">
           </div>
           <div class="row">   
-            <input type="text" class="input-box" [ngClass]="{'error' : form.controls['position']?.errors && isSubmitted }" required name="position" [(ngModel)]="registration.position"placeholder="Position">
+            <input type="text" pattern="[ a-zA-Z]*"class="input-box" [ngClass]="{'error' : form.controls['position']?.errors && isSubmitted }" required name="position" [(ngModel)]="registration.position"placeholder="Position">
         </div>
         <div class="row">   
           <input type="email" email class="input-box" [ngClass]="{'error' : form.controls['email']?.errors&& form.controls['email']?.touched && isSubmitted }" required name="email" [(ngModel)]="registration.email" placeholder="Enter Your Email">
         </div>
       <div class="row">   
-        <input type="text" class="input-box" [ngClass]="{'error' : form.controls['companyName']?.errors && isSubmitted }" required name="companyName"  [(ngModel)]="registration.companyName"placeholder="Entity / Organization">
+        <input type="text" pattern="[ a-zA-Z]*" class="input-box" [ngClass]="{'error' : form.controls['companyName']?.errors && isSubmitted }" required name="companyName"  [(ngModel)]="registration.companyName"placeholder="Entity / Organization">
+     
+      </div>
+    <div class="row"> 
+      <input type="text"  pattern="[0]{1}[0-9]{9}" (keypress)="($event.charCode >= 48 && $event.charCode < 58)" class="input-box" [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber']?.touched && isSubmitted }" required name="phoneNumber" [(ngModel)]="registration.phoneNumber" placeholder="Phone Number" >
+      <!-- <input type="text" class="input-box"  [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber'].touched && form.controls['phoneNumber'].invalid&& isSubmitted }" required name="phoneNumber"  [(ngModel)]="registration.phoneNumber" placeholder="Phone Number"> -->
+    
     </div>
-    <div class="row">   
-      <input type="text" class="input-box"  [ngClass]="{'error' : form.controls['phoneNumber']?.errors && isSubmitted }" required name="phoneNumber"  [(ngModel)]="registration.phoneNumber" placeholder="Phone Number">
-    </div>
-    <span>{{errorMessage}}</span>
+    <span [hidden]="isHidden" >{{errorMessage}}</span>
 
           <button type="submit" class="submit-btn">Submit</button>
-        </form>
-      
-      </div>
-        <div class="card-back">
-        </div>
+     
+      </form>
+       
     </div>
 
+  </div>
   </div>
 </form>
