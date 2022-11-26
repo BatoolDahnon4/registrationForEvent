@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {  AfterViewInit, Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {  AfterViewInit, Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import{FormControl,FormGroup, NgForm} from '@angular/forms';
 import { Guest, GuestService } from '../rest/typescript-angular-client-generated (1)';
 import {MatTableDataSource } from '@angular/material/table'
@@ -20,13 +20,16 @@ export interface DialogData {
 export class CardComponent implements OnInit {
  errorMessage:any;
  isHidden = true;
+ @Input()
+ source: string = 'not set';
 
-registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:"westBank"}
+registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:""}
 dataSource: MatTableDataSource<Guest> = new MatTableDataSource<Guest>([]);
 email: string='';  
 isSubmitted = false;
 constructor(private http : HttpClient , private gstServ :GuestService ,public dialog: MatDialog) { }
   ngOnInit(): void {
+    alert(this.source);
   }
 
   register(form:NgForm){
@@ -39,7 +42,8 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
     }
     
     else  {
-     this.errorMessage=''
+     this.errorMessage='';
+     this.registration.source = this.source;
       this.gstServ.apiGuestAddGuestPost(this.registration).subscribe(res=>{
         console.log(res);
         this.openDialog();
