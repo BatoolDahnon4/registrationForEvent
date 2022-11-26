@@ -29,7 +29,6 @@
       </div>
     <div class="row"> 
       <input type="text"  pattern="[0]{1}[0-9]{9}" (keypress)="($event.charCode >= 48 && $event.charCode < 58)" class="input-box" [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber']?.touched && isSubmitted }" required name="phoneNumber" [(ngModel)]="registration.phoneNumber" placeholder="Phone Number" >
-      <!-- <input type="text" class="input-box"  [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber'].touched && form.controls['phoneNumber'].invalid&& isSubmitted }" required name="phoneNumber"  [(ngModel)]="registration.phoneNumber" placeholder="Phone Number"> -->
     
     </div>
     <span [hidden]="isHidden" >{{errorMessage}}</span>
