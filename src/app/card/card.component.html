@@ -28,8 +28,13 @@
      
       </div>
     <div class="row"> 
-      <input type="text"  pattern="[0]{1}[0-9]{9}" (keypress)="($event.charCode >= 48 && $event.charCode < 58)" class="input-box" [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber']?.touched && isSubmitted }" required name="phoneNumber" [(ngModel)]="registration.phoneNumber" placeholder="Phone Number" >
+      <input type="text"  class="input-box" pattern="[0]{1}[0-9]{9}" (keypress)="($event.charCode >= 48 && $event.charCode < 58)" class="input-box" [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber']?.touched && isSubmitted }" required name="phoneNumber" [(ngModel)]="registration.phoneNumber" placeholder="Phone Number" >
     
+    </div>
+    <label class="labelradio">Have you mind taking photos ?</label>
+    <div class="radiobuttons" [ngClass]="{'error' : form.controls['mind']?.errors && isSubmitted }">
+      <input class="radio" type="radio" #mind="ngModel" name="mind" value="yes"[(ngModel)]="haveMind"> yes
+      <input class="radio" type="radio" required #mind="ngModel"  name="mind" value="no"[(ngModel)]="haveMind"> No
     </div>
     <span [hidden]="isHidden" >{{errorMessage}}</span>
 

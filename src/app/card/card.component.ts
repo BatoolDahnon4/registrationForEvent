@@ -22,11 +22,12 @@ export class CardComponent implements OnInit {
  isHidden = true;
  @Input()
  source: string = 'not set';
-
-registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:""}
+ haveMind: string = 'no';
+registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:"",haveMind:""}
 dataSource: MatTableDataSource<Guest> = new MatTableDataSource<Guest>([]);
 email: string='';  
 isSubmitted = false;
+
 constructor(private http : HttpClient , private gstServ :GuestService ,public dialog: MatDialog) { }
   ngOnInit(): void {
     // alert(this.source);
@@ -44,6 +45,7 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
     else  {
      this.errorMessage='';
      this.registration.source = this.source;
+     this.registration.haveMind=this.haveMind;
       this.gstServ.apiGuestAddGuestPost(this.registration).subscribe(res=>{
         console.log(res);
         this.openDialog();
