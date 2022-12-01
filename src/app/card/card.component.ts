@@ -22,8 +22,8 @@ export class CardComponent implements OnInit {
  isHidden = true;
  @Input()
  source: string = 'not set';
- haveMind: string = 'no';
-registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:"",haveMind:""}
+ okay: string = 'yes';
+registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"",source:"",okay:""}
 dataSource: MatTableDataSource<Guest> = new MatTableDataSource<Guest>([]);
 email: string='';  
 isSubmitted = false;
@@ -45,7 +45,7 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
     else  {
      this.errorMessage='';
      this.registration.source = this.source;
-     this.registration.haveMind=this.haveMind;
+     this.registration.okay=this.okay;
       this.gstServ.apiGuestAddGuestPost(this.registration).subscribe(res=>{
         console.log(res);
         this.openDialog();
