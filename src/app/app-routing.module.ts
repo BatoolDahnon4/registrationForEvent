@@ -16,9 +16,9 @@ const routes: Routes = [
       {path:'', redirectTo:'card', pathMatch:'full'},
       {path:'Registration',component:CardComponent},
        {path:'gala/gaza',component:GazaComponent},
-       {path:'gala/westbank',component:WestbankComponent},
+       {path:'gala/wb',component:WestbankComponent},
       {path:'conference/gaza',component:ConferencegazaComponent},
-      {path:'conference/westbank',component:ConferencewestbankComponent}
+      {path:'conference/wb',component:ConferencewestbankComponent}
     ]
   }
 ];

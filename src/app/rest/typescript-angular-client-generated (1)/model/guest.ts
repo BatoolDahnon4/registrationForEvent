@@ -18,5 +18,5 @@ export interface Guest {
     companyName?: string;
     phoneNumber?: string;
     source?:string;
-    haveMind?:string;
+    okay?:string;
 }
