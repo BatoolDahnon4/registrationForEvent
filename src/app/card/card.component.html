@@ -32,11 +32,21 @@
     
     </div>
     <label class="labelradio">Are you okay with taking photos ?</label>
-    <div class="radiobuttons" [ngClass]="{'error' : form.controls['mind']?.errors && isSubmitted }">
+    <!-- <div class="radiobuttons" [ngClass]="{'error' : form.controls['mind']?.errors && isSubmitted }">
       <input class="radio" type="radio" #mind="ngModel" name="mind" value="yes"[(ngModel)]="okay"> yes
       <input class="radio" type="radio" required #mind="ngModel"  name="mind" value="no"[(ngModel)]="okay"> No
-    </div>
-    <span [hidden]="isHidden" >{{errorMessage}}</span>
+    </div> -->
+    <div class="radiobuttons">
+    <label class="container">Yes
+      <input type="radio" checked="checked" name="radio"  #mind="ngModel" value="yes" [(ngModel)]="okay">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">No
+      <input type="radio"  name="radio"  #mind="ngModel" value="no" [(ngModel)]="okay">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+    <span class="errorM" [hidden]="isHidden">{{errorMessage}}</span>
 
           <button type="submit" class="submit-btn">Submit</button>
      
