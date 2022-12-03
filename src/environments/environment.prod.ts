@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  basePath: 'https://localhost:7110'
+  basePath: 'https://apps.iconnect-tech.com/Expo2022'
 };
