@@ -220,7 +220,7 @@ input .radio{
     box-shadow: 0 0 2px #ff00008f;
 }
 .Logo{
-    background-image: url(/assets/images/expotechh.png);
+    background-image: url(../../assets/images/expotechh.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px;
@@ -234,7 +234,7 @@ input .radio{
     margin-bottom: 83px; */
 }
 .companyLogo{
-    background-image: url(/assets/images/companyLogo.png);
+    background-image: url(../../assets/images/companyLogo.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px;
