@@ -5,7 +5,7 @@
     perspective: 1000px;
     border-radius: 20px;
     overflow: hidden;
-    margin-top: 82px;
+    margin-top: 62px;
 }
 .inner-box{
     background: #2a5587;
@@ -142,16 +142,17 @@ input .radio{
 } */
 
 .container {
-    display: block;
+  display: block;
     position: relative;
-    padding-left: 26px;
-    margin-bottom: 12px;
+    padding-left: 11px;
+    margin-bottom: -2px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 12px;
     -webkit-user-select: none;
     user-select: none;
+    font-family: sans-serif;
     margin-right: 28px;
-  }
+ }
   
   /* Hide the browser's default radio button */
   .container input {
@@ -216,8 +217,8 @@ input .radio{
 
 .error {
     /* color: red; */
-    border-color: #513030;
-    box-shadow: 0 0 2px #ff00008f;
+    border-color: #834343;
+    box-shadow: 0 0 3px #ff0000;
 }
 .Logo{
     background-image: url(/assets/images/expotechh.png);

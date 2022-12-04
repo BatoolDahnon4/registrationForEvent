@@ -27,6 +27,7 @@ registration:Guest = {name:"", position:"",email:"",companyName:"",phoneNumber:"
 dataSource: MatTableDataSource<Guest> = new MatTableDataSource<Guest>([]);
 email: string='';  
 isSubmitted = false;
+isShown = false;
 
 constructor(private http : HttpClient , private gstServ :GuestService ,public dialog: MatDialog) { }
   ngOnInit(): void {
@@ -69,6 +70,13 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
   console.log("Hii")
     };
    
-  
+    checkbox(){
+      if ( this.source=="conferencegaza" || this.source=="gaza" ){
+       return false;
+      }
+      else{
+        return true;
+      }
+    }
 }
 
