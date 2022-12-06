@@ -31,7 +31,7 @@
       <input type="text"  class="input-box"  maxlength="15" class="input-box" [ngClass]="{'error' : form.controls['phoneNumber']?.errors && form.controls['phoneNumber']?.touched && isSubmitted }" required name="phoneNumber" [(ngModel)]="registration.phoneNumber" placeholder="Phone Number" >
     
     </div>
-    <!-- <label class="labelradio">Are you okay with taking photos ?</label> -->
+   <!-- <label class="labelradio">Are you okay with taking photos ?</label> -->
     <!-- <div class="radiobuttons" [ngClass]="{'error' : form.controls['mind']?.errors && isSubmitted }">
       <input class="radio" type="radio" #mind="ngModel" name="mind" value="yes"[(ngModel)]="okay"> yes
       <input class="radio" type="radio" required #mind="ngModel"  name="mind" value="no"[(ngModel)]="okay"> No
@@ -41,8 +41,8 @@
       <input type="checkbox" checked="checked" name="radio"  #mind="ngModel" value="yes" [(ngModel)]="okay">
       <span class="checkmark"></span>
     </label>
-
   </div> -->
+   
   <div *ngIf="checkbox()" class="radiobuttons">
   <input type="checkbox" equirename="active" ngModel required  #mind="ngModel" name="mind" value="yes" [ngClass]="{'error' : form.controls['mind']?.errors && isSubmitted }">
   <label class="container">The event will be documented (Pictures and Videos).</label>
