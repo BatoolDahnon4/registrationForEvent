@@ -50,8 +50,8 @@
 
     <span class="errorM" [hidden]="isHidden">{{errorMessage}}</span>
 
-          <button type="submit" class="submit-btn">Submit</button>
-     
+          <button type="submit" class="submit-btn" [hidden]="form.disabled">Submit</button>
+		  <button type="submit" class="submit-btn" [hidden]="!form.disabled">Processing</button>
       </form>
        
     </div>

@@ -40,25 +40,36 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
 
     if (!form.form.valid) {
        form.form.markAllAsTouched();
-       
-    }
-    
-    else  {
+    }else  {
      this.errorMessage='';
      this.registration.source = this.source;
      this.registration.okay=this.okay;
+     if(!form.disabled){
+      form.form.disable();
+     }
+     
       this.gstServ.apiGuestAddGuestPost(this.registration).subscribe(res=>{
-        console.log(res);
+        //console.log(res);
         this.openDialog();
-        console.log(res)
+        //console.log(res)
         var data= this.registration;
-        console.log(this.registration);
+        //console.log(this.registration);
+        if(form.disabled){
+          form.form.enable();
+          form.resetForm();
+         }
+        
+
 
         }, 
         error=>{
-          console.log(error);
+          //console.log(error);
           this.errorMessage=error.error;
           this.isHidden=false;
+
+          if(form.disabled){
+            form.form.enable();
+           }
 
         })
       
@@ -67,7 +78,7 @@ constructor(private http : HttpClient , private gstServ :GuestService ,public di
 
   openDialog() {
   this.dialog.open(MyDialogComponent);
-  console.log("Hii")
+  //console.log("Hii")
     };
    
     checkbox(){
